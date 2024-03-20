@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notify/global_widget/global_textstyles.dart';
 
 class GlAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -19,7 +20,7 @@ class GlAppbar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title!,
-          // style: GLTextStyles.titleStyle
+         style: GLTextStyles.mainfont
       ),
       // titleTextStyle: GLTextStyles.titleStyle,
       centerTitle: centerTitle,
