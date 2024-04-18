@@ -190,17 +190,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-          backgroundColor: Color(0xff803D3B),
-          onPressed: () {
-            providerWatch.existingNoteIndex = -1;
-            _addOrEditNote(context);
-          },
-          child: Icon(
-            Icons.add,
-            color: primarycolorlight,
-            size: 40,
-          )),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 15),
+        child: FloatingActionButton(
+            backgroundColor: Color(0xff803D3B),
+            onPressed: () {
+              providerWatch.existingNoteIndex = -1;
+              _addOrEditNote(context);
+            },
+            child: Icon(
+              Icons.add,
+              color: primarycolorlight,
+              size: 40,
+            )),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
