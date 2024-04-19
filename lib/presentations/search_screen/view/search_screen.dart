@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:lottie/lottie.dart';
+import 'package:notify/core/constants/colors.dart';
 import 'package:provider/provider.dart';
 
 import '../../../global_widget/color_constants.dart';
@@ -28,13 +28,15 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         backgroundColor: bgcolor,
         centerTitle: true,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: bgcolor,
+        leading: Padding(
+          padding:  EdgeInsets.only(top: 13),
+          child: IconButton(onPressed: () { Navigator.pop(context) ; }, icon: Icon(Icons.arrow_back_ios),
+          ),
         ),
         flexibleSpace: Padding(
-          padding: const EdgeInsets.only(top: 50, left: 40, right: 30),
+          padding: const EdgeInsets.only(top: 40, left: 50, right: 30),
           child: TextField(
+            cursorColor: Colors.grey,
             autofocus: true,
             controller: searchController,
             onChanged: (value) {
@@ -45,17 +47,10 @@ class _SearchScreenState extends State<SearchScreen> {
               setState(() {});
             },
             decoration: InputDecoration(
-              prefixIcon: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: primarycolordark,
-                  )),
-              contentPadding: EdgeInsets.all(10),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorConstants.brown)),
+               contentPadding: EdgeInsets.only(left: 15),
               hintText: "Search for Notes",
-              hintStyle: subtextdark,
+              hintStyle: subtextgrey,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -85,7 +80,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         SizedBox(
                           height: 15,
                         ),
-                        Text("Recent Searches", style: maintextdark),
+                        Text("Recent Searches", style: subtextdark),
                         SizedBox(
                           height: 15,
                         ),
@@ -110,6 +105,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                       IconButton(
                                         icon: Icon(
                                           Icons.close,
+                                          size: 20,
                                           color: primarycolordark,
                                         ),
                                         onPressed: () async {
@@ -170,11 +166,6 @@ class _SearchScreenState extends State<SearchScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: primarycolorlight,
-                                border: Border(
-                                    left: BorderSide(
-                                      color: primarycolordark,
-                                      width: 7,
-                                    )),
                                 borderRadius: BorderRadius.circular(20)),
                             padding: EdgeInsets.all(10.0),
                             child: Column(
@@ -185,18 +176,11 @@ class _SearchScreenState extends State<SearchScreen> {
                                   MainAxisAlignment.spaceBetween,
                                   children: [
                                     Container(
-                                        decoration: BoxDecoration(
-                                            gradient: LinearGradient(colors: [
-                                              Colors.purple,
-                                              Colors.red
-                                            ]),
-                                            borderRadius:
-                                            BorderRadius.circular(10)),
                                         child: Padding(
                                           padding: const EdgeInsets.all(5.0),
                                           child: Text(
                                             note.category,
-                                            style: subtextlight,
+                                            style: subtextbrown,
                                           ),
                                         )),
                                   ],
@@ -206,24 +190,10 @@ class _SearchScreenState extends State<SearchScreen> {
                                 ),
                                 Text(
                                   note.title,
-                                  style: maintextdark,
+                                  style: titletext,
                                 ),
                                 SizedBox(
                                   height: 10,
-                                ),
-                                SizedBox(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.9,
-                                  child: Text(
-                                    note.description,
-                                    textAlign: TextAlign.justify,
-                                    maxLines: 3,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: subtextdark,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 20,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,

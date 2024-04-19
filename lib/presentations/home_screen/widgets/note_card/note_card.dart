@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:notify/core/constants/colors.dart';
 
 
 import '../../../../global_widget/color_constants.dart';
@@ -46,6 +48,7 @@ class _NoteCardState extends State<NoteCard> {
         },
         child: Container(
           decoration: BoxDecoration(
+            border: Border.all(color: Colors.black54),
               color: primarycolorlight,
               borderRadius: BorderRadius.circular(20)),
           padding: EdgeInsets.all(10.0),
@@ -56,10 +59,8 @@ class _NoteCardState extends State<NoteCard> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Color(0xffAF8260), Color(0xff803D3B)]),
-                          borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(color: ColorConstants.lightbrown,
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.zero,topLeft: Radius.zero,bottomRight: Radius.circular(10),topRight: Radius.zero)),
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: Text(
@@ -73,13 +74,13 @@ class _NoteCardState extends State<NoteCard> {
                           onPressed: widget.onEditPressed,
                           icon: Icon(
                             Icons.edit,
-                            color: primarycolordark,
+                            color: ColorConstants.brown,
                           )),
                       IconButton(
                           onPressed: widget.onDeletePressed,
                           icon: Icon(
                             Icons.delete,
-                            color: primarycolordark,
+                            color: ColorConstants.brown,
                           ))
                     ],
                   ),
@@ -90,7 +91,7 @@ class _NoteCardState extends State<NoteCard> {
               ),
               Text(
                 widget.title,
-                style: maintextdark,
+                style: titletext,
               ),
               SizedBox(
                 height: 10,
@@ -102,7 +103,7 @@ class _NoteCardState extends State<NoteCard> {
                   textAlign: TextAlign.justify,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: subtextdark,
+                  style: subtextgrey16,
                 ),
               ),
               SizedBox(

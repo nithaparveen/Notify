@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/constants/colors.dart';
 import '../../../global_widget/color_constants.dart';
 import '../../../global_widget/global_textstyles.dart';
 import '../../../repository/note_card_model/note_card_model.dart';
@@ -66,9 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       drawer: Drawer(
         child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [Color(0xffAF8260), Color(0xff803D3B)])),
+          decoration: BoxDecoration( color: ColorConstants.lightbrown,),
           child: Column(
             children: [
               DrawerHeader(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/constants/colors.dart';
 import '../../../../global_widget/color_constants.dart';
 import '../../../../global_widget/global_textstyles.dart';
 
@@ -35,7 +36,7 @@ class _NoteCardFullViewState extends State<NoteCardFullView> {
         ),
         backgroundColor: primarycolorlight,
         centerTitle: true,
-        title: Text(widget.title, style: maintextdark),
+        title: Text(widget.title, style: titletext),
       ),
       body: ListView(children: [
         Padding(
@@ -46,33 +47,25 @@ class _NoteCardFullViewState extends State<NoteCardFullView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Colors.purple, Colors.red]),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Text(
-                          widget.category,
-                          style: subtextlight,
-                        ),
-                      )),
-                  Text(widget.date.toString(), style: maintextdark),
+                  Text(
+                    widget.category,
+                    style: subtextbrown20,
+                  ),
+                  Text(widget.date.toString(), style: subtextdark),
                 ],
               ),
               SizedBox(
                 height: 10,
               ),
               Divider(
-                thickness: 3,
+                thickness: 1.5,
                 color: primarycolordark,
               ),
               SizedBox(
                 height: 10,
               ),
               Text(widget.description,
-                  textAlign: TextAlign.justify, style: subtextdark),
+                  textAlign: TextAlign.justify, style: subtextgrey16),
             ],
           ),
         ),
