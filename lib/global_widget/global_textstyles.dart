@@ -28,4 +28,4 @@ TextStyle subtextbrown20 = GoogleFonts.poppins(
 TextStyle subtextlight17 = GoogleFonts.poppins(
     fontSize: 20, fontWeight: FontWeight.bold, color: textcolorlight);
 TextStyle title = GoogleFonts.raleway(
-    fontSize: 28, fontWeight: FontWeight.bold, color: textcolordark);
+    fontSize: 28, fontWeight: FontWeight.bold, color: Color(0xff803D3B));
