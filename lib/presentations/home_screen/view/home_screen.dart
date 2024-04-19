@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:notify/presentations/settings_screen/view/search_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/constants/colors.dart';
@@ -62,87 +63,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     ));
               },
               icon: Icon(Icons.search)),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SettingScreen(),
+                    ));
+              },
+              icon: Icon(Icons.settings)),
         ],
-      ),
-      drawer: Drawer(
-        child: Container(
-          decoration: BoxDecoration( color: ColorConstants.lightbrown,),
-          child: Column(
-            children: [
-              DrawerHeader(
-                  child: Text(
-                "NOtifY",
-                style: subtextlight17,
-              )),
-              ListTile(
-                title: Row(
-                  children: [
-                    Icon(
-                      Icons.info_outline,
-                      color: primarycolorlight,
-                      size: 22,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Terms and Conditions', style: subtextlight),
-                  ],
-                ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => TermsAndConditionScreen(),
-                      ));
-                },
-              ),
-              ListTile(
-                title: Row(
-                  children: [
-                    Icon(
-                      Icons.mail_outline_outlined,
-                      color: primarycolorlight,
-                      size: 22,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Support', style: subtextlight),
-                  ],
-                ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SupportScreen(),
-                      ));
-                },
-              ),
-              ListTile(
-                title: Row(
-                  children: [
-                    Icon(
-                      Icons.privacy_tip_outlined,
-                      color: primarycolorlight,
-                      size: 22,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Privacy Policy', style: subtextlight),
-                  ],
-                ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PrivacyPolicyScreen(),
-                      ));
-                },
-              ),
-            ],
-          ),
-        ),
       ),
       body: Consumer<NoteCardController>(
         builder: (context, value, child) {
