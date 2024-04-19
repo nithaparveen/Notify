@@ -27,5 +27,5 @@ TextStyle subtextbrown20 = GoogleFonts.poppins(
     fontSize: 20, fontWeight: FontWeight.bold, color: ColorConstants.brown);
 TextStyle subtextlight17 = GoogleFonts.poppins(
     fontSize: 20, fontWeight: FontWeight.bold, color: textcolorlight);
-TextStyle title = GoogleFonts.raleway(
+TextStyle title = GoogleFonts.dmSerifDisplay(
     fontSize: 28, fontWeight: FontWeight.bold, color: Color(0xff803D3B));
