@@ -10,7 +10,7 @@ import '../../home_screen/widgets/note_card_fullview/note_card_fullview.dart';
 import '../controller/search_screen_controller.dart';
 
 class SearchScreen extends StatefulWidget {
-  SearchScreen({Key? key}) : super(key: key);
+  const SearchScreen({Key? key}) : super(key: key);
 
   @override
   _SearchScreenState createState() => _SearchScreenState();
@@ -29,8 +29,12 @@ class _SearchScreenState extends State<SearchScreen> {
         backgroundColor: bgcolor,
         centerTitle: true,
         leading: Padding(
-          padding:  EdgeInsets.only(top: 13),
-          child: IconButton(onPressed: () { Navigator.pop(context) ; }, icon: Icon(Icons.arrow_back_ios),
+          padding: EdgeInsets.only(top: 13),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios),
           ),
         ),
         flexibleSpace: Padding(
@@ -47,8 +51,9 @@ class _SearchScreenState extends State<SearchScreen> {
               setState(() {});
             },
             decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: ColorConstants.brown)),
-               contentPadding: EdgeInsets.only(left: 15),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: ColorConstants.brown)),
+              contentPadding: EdgeInsets.only(left: 15),
               hintText: "Search for Notes",
               hintStyle: subtextgrey,
               border: OutlineInputBorder(
@@ -70,20 +75,17 @@ class _SearchScreenState extends State<SearchScreen> {
                   return Text('Error: ${snapshot.error}');
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                   return Center(
-                      child: Text('No Data Found',style: TextStyle(color: Colors.grey,fontSize: 20)));
+                      child: Text('No Data Found',
+                          style: TextStyle(color: Colors.grey, fontSize: 20)));
                 } else {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: 15,
-                        ),
+                        SizedBox(height: 15),
                         Text("Recent Searches", style: subtextdark),
-                        SizedBox(
-                          height: 15,
-                        ),
+                        SizedBox(height: 15),
                         Expanded(
                           child: ListView.builder(
                             scrollDirection: Axis.vertical,
@@ -92,14 +94,14 @@ class _SearchScreenState extends State<SearchScreen> {
                               final recentSearch = snapshot.data![index];
                               return Padding(
                                 padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
                                 child: InkWell(
                                   onTap: () {
                                     searchController.text = recentSearch;
                                   },
                                   child: Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(recentSearch, style: subtextdark),
                                       IconButton(
@@ -130,12 +132,14 @@ class _SearchScreenState extends State<SearchScreen> {
           } else {
             final filteredNotes = noteController.notes
                 .where((note) => note.title
-                .toLowerCase()
-                .contains(searchController.text.toLowerCase()))
+                    .toLowerCase()
+                    .contains(searchController.text.toLowerCase()))
                 .toList();
             if (filteredNotes.isEmpty) {
               return Center(
-                child: Text('No Data Found',style: TextStyle(color: Colors.grey,fontSize: 20),
+                  child: Text(
+                'No Data Found',
+                style: TextStyle(color: Colors.grey, fontSize: 20),
               ));
             }
             return Padding(
@@ -144,9 +148,8 @@ class _SearchScreenState extends State<SearchScreen> {
                 children: [
                   Expanded(
                     child: ListView.separated(
-                      separatorBuilder: (context, index) => SizedBox(
-                        height: 20,
-                      ),
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 20),
                       itemCount: filteredNotes.length,
                       itemBuilder: (context, index) {
                         final note = filteredNotes[index];
@@ -154,12 +157,12 @@ class _SearchScreenState extends State<SearchScreen> {
                           onTap: () async {
                             await Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => NoteCardFullView(
-                                  category: note.category,
-                                  title: note.title,
-                                  description: note.description,
-                                  date: DateFormat('dd-MM-yyyy')
-                                      .format(note.date),
-                                )));
+                                      category: note.category,
+                                      title: note.title,
+                                      description: note.description,
+                                      date: DateFormat('dd-MM-yyyy')
+                                          .format(note.date),
+                                    )));
                             searchScreenController
                                 .addRecentSearch(searchController.text);
                           },
@@ -173,28 +176,24 @@ class _SearchScreenState extends State<SearchScreen> {
                               children: [
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Container(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(5.0),
-                                          child: Text(
-                                            note.category,
-                                            style: subtextbrown,
-                                          ),
-                                        )),
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        note.category,
+                                        style: subtextbrown,
+                                      ),
+                                    )),
                                   ],
                                 ),
-                                SizedBox(
-                                  height: 10,
-                                ),
+                                SizedBox(height: 10),
                                 Text(
                                   note.title,
                                   style: titletext,
                                 ),
-                                SizedBox(
-                                  height: 10,
-                                ),
+                                SizedBox(height: 10),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
