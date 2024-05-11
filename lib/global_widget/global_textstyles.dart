@@ -15,10 +15,8 @@ TextStyle maintextlight = GoogleFonts.poppins(
     fontSize: 24, fontWeight: FontWeight.bold, color: textcolorlight);
 TextStyle subtextdark = GoogleFonts.poppins(
     fontSize: 17, fontWeight: FontWeight.bold, color: textcolordark);
-TextStyle subtextgrey = GoogleFonts.poppins(
-    fontSize: 14, color: Colors.grey);
-TextStyle subtextgrey16 = GoogleFonts.poppins(
-    fontSize: 16, color: Colors.grey);
+TextStyle subtextgrey = GoogleFonts.poppins(fontSize: 14, color: Colors.grey);
+TextStyle subtextgrey16 = GoogleFonts.poppins(fontSize: 16, color: Colors.grey);
 TextStyle subtextlight = GoogleFonts.poppins(
     fontSize: 14, fontWeight: FontWeight.bold, color: textcolorlight);
 TextStyle subtextbrown = GoogleFonts.poppins(
