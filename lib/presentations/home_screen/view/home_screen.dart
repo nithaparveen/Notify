@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:notify/presentations/settings_screen/view/search_screen.dart';
+import 'package:notify/presentations/settings_screen/view/settings_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/constants/colors.dart';
