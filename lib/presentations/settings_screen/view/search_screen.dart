@@ -12,20 +12,23 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Settings",style: browntitle,),),
+      appBar: AppBar(
+        title: Text(
+          "Settings",
+          style: browntitle,
+        ),
+      ),
       body: Column(
         children: [
           ListTile(
             title: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.info_outline,
                   color: Colors.black,
                   size: 22,
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                const SizedBox(width: 10),
                 Text('Terms and Conditions', style: subtextdark),
               ],
             ),
@@ -62,14 +65,12 @@ class SettingScreen extends StatelessWidget {
           ListTile(
             title: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.privacy_tip_outlined,
                   color: Colors.black,
                   size: 22,
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                const SizedBox(width: 10),
                 Text('Privacy Policy', style: subtextdark),
               ],
             ),
