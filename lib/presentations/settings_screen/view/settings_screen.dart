@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notify/global_widget/global_textstyles.dart';
-
-import '../../../global_widget/color_constants.dart';
 import '../../home_screen/widgets/drawer/privacypolicy.dart';
 import '../../home_screen/widgets/drawer/support.dart';
 import '../../home_screen/widgets/drawer/termsandconditions.dart';
@@ -43,14 +41,12 @@ class SettingScreen extends StatelessWidget {
           ListTile(
             title: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.mail_outline_outlined,
                   color: Colors.black,
                   size: 22,
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                const SizedBox(width: 10),
                 Text('Support', style: subtextdark),
               ],
             ),
