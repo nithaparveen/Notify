@@ -8,4 +8,4 @@ class ColorConstants {
   static Color primaryCardColor = Color(0xff7f9183);
   static Color brown = Color(0xff803D3B);
   static Color lightBrown = Color(0xffAF8260);
-}git 
+}
