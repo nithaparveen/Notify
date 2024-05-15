@@ -6,13 +6,13 @@ import 'package:provider/provider.dart';
 
 import '../../../core/constants/colors.dart';
 import '../../../global_widget/color_constants.dart';
-import '../../../global_widget/global_textstyles.dart';
+import '../../../core/constants/global_textstyles.dart';
 import '../../../repository/note_card_model/note_card_model.dart';
 import '../../search_screen/view/search_screen.dart';
 import '../controller/note_card_controller.dart';
 import '../widgets/drawer/privacypolicy.dart';
-import '../widgets/drawer/support.dart';
-import '../widgets/drawer/termsandconditions.dart';
+import '../widgets/support.dart';
+import '../widgets/termsandconditions.dart';
 import '../widgets/note_card/note_card.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../global_widget/color_constants.dart';
-import '../../../../global_widget/global_textstyles.dart';
+import '../../../../core/constants/global_textstyles.dart';
 
 class NoteCardFullView extends StatefulWidget {
   const NoteCardFullView(

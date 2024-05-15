@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:notify/core/constants/colors.dart';
+
 import 'color_constants.dart';
 
 TextStyle maintextdark = GoogleFonts.poppins(

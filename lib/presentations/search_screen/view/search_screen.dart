@@ -4,7 +4,7 @@ import 'package:notify/core/constants/colors.dart';
 import 'package:provider/provider.dart';
 
 import '../../../global_widget/color_constants.dart';
-import '../../../global_widget/global_textstyles.dart';
+import '../../../core/constants/global_textstyles.dart';
 import '../../home_screen/controller/note_card_controller.dart';
 import '../../home_screen/widgets/note_card_fullview/note_card_fullview.dart';
 import '../controller/search_screen_controller.dart';

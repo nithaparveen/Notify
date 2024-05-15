@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-import '../../../../global_widget/color_constants.dart';
-import '../../../../global_widget/global_textstyles.dart';
+import '../../../core/constants/color_constants.dart';
+import '../../../core/constants/global_textstyles.dart';
 
 class SupportScreen extends StatefulWidget {
   const SupportScreen({super.key});

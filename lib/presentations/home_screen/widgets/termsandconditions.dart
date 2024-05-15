@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../../global_widget/color_constants.dart';
-import '../../../../global_widget/global_textstyles.dart';
+import '../../../core/constants/color_constants.dart';
+import '../../../core/constants/global_textstyles.dart';
 
 class TermsAndConditionScreen extends StatefulWidget {
   const TermsAndConditionScreen({super.key});

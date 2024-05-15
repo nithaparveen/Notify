@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:notify/core/constants/colors.dart';
 
 import '../../../../global_widget/color_constants.dart';
-import '../../../../global_widget/global_textstyles.dart';
+import '../../../../core/constants/global_textstyles.dart';
 import '../note_card_fullview/note_card_fullview.dart';
 
 class NoteCard extends StatefulWidget {

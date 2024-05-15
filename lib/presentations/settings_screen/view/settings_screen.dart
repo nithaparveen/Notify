@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:notify/global_widget/global_textstyles.dart';
-import '../../home_screen/widgets/drawer/privacypolicy.dart';
-import '../../home_screen/widgets/drawer/support.dart';
-import '../../home_screen/widgets/drawer/termsandconditions.dart';
+import 'package:notify/core/constants/global_textstyles.dart';
+import '../../home_screen/widgets/privacypolicy.dart';
+import '../../home_screen/widgets/support.dart';
+import '../../home_screen/widgets/termsandconditions.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});

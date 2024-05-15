@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:notify/global_widget/global_textstyles.dart';
+import 'package:notify/core/constants/global_textstyles.dart';
 
 import '../../home_screen/view/home_screen.dart';
 
